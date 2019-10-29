@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import CountryDetail from './CountryDetail'
 
 class CountrySelect extends Component {
   constructor(props) {
@@ -11,25 +10,24 @@ class CountrySelect extends Component {
   }
 
   handleSelect(event) {
+    this.props.onCountrySelected(event.target.value);
     this.setState({value: event.target.value})
   }
 
-
-
   render() {
-    const countriesList = this.props.countries.map((country) => {
+    const countriesNodes = this.props.countries.map((country) => {
       return (
 
         // <CountryDetail country={country} key={country.numericCode}></CountryDetail>
-        <option key={country.numericCode} value={country.name}>{country.name}</option>
+        <option key={country.numericCode} value={country.numericCode}>{country.name}</option>
       )
     })
     return (
-      <form className="country-select" onChange={this.handleSelect}>
+      <form className="country-select" onChange={this.handleSelect} >
       <label>
       Select a country
-      <select value={this.state.value} >
-      {countriesList}
+      <select value={this.state.value} onChange={this.handleSelect}>
+      {countriesNodes}
       </select>
       </label>
       </form>
