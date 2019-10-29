@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Header from '../components/Header'
-
+import CountrySelect from '../components/CountrySelect'
 class CountryContainer extends Component {
 
   constructor(props) {
@@ -16,6 +16,7 @@ class CountryContainer extends Component {
       <div className="country-container">
       <h1>This is the text rendered in CountryContainer</h1>
       <Header title="This is the title."/>
+      <CountrySelect countries={this.state.countries}/>
       </div>
     )
   }
