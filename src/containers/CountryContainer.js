@@ -7,7 +7,8 @@ class CountryContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      countries: []
+      countries: [],
+      selectedCountry: {}
     }
   }
 
@@ -20,6 +21,11 @@ class CountryContainer extends Component {
     this.setState({countries: countries})
   )
   }
+
+  handleSelect(selectedCountry) {
+  this.setState({selectedCountry: selectedCountry})
+}
+
 
   render() {
     return (

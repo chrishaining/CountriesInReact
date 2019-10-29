@@ -4,7 +4,7 @@ class CountryDetail extends Component {
 
 render() {
   return (
-    <p>{this.props.country.capital}</p>
+    <p>{this.props.country.name}</p>
   )
 }
 
