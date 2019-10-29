@@ -1,18 +1,24 @@
 import React, {Component} from 'react'
 import Header from '../components/Header'
 import CountrySelect from '../components/CountrySelect'
+
 class CountryContainer extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      countries: [
-        {
-        name: 'Afganistan',
-        capital: 'Kabul'
-      }
-      ]
+      countries: []
     }
+  }
+
+  componentDidMount(){
+    fetch('https://restcountries.eu/rest/v2/all')
+    .then(results => {
+      return results.json()
+    })
+    .then(countries =>
+    this.setState({countries: countries})
+  )
   }
 
   render() {
