@@ -7,6 +7,10 @@ class CountryContainer extends Component {
     super(props)
     this.state = {
       countries: [
+        {
+        name: 'Afganistan',
+        capital: 'Kabul'
+      }
       ]
     }
   }
